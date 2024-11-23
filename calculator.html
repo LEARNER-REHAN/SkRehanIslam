@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Profile</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="calstyle.css">
+</head>
+<body>
+<header>
+<div id="navbar">
+<li id="webname"><a href="index.html" style="color:#FD8B51;">FunnySK.in</a></li>
+<li id="menu" class="menu-item">     
+<a href="#"> 
+<i class="fa-solid fa-bars">
+</i> 
+Menu</a></li>
+<li id="save" class="menu-item">     <a href="save.html"> <i class="fa-solid fa-bookmark"></i> Savend</a></li>
+<li id="sreachli" class="menu-item">  <input type="text" name="search" id="search" placeholder="search items"> <i class="fa-solid fa-magnifying-glass"></i></li>
+<li id="logli" class="menu-item">                 <i class="fa-solid fa-user"></i> <a href="login.html">Login</a></li>
+</div>
+</header>
+
+<header>
+<div id="header">
+<p id="cal">Calculator <i class="fa-solid fa-calculator"></i></p>
+</div>
+</header>
+
+
+
+<div id="section">
+<div id="calculator">
+ <p class="select">Enter two numbers:</p>
+<div>
+ <input type="number" id="num1" placeholder="Enter number 1">
+ <input type="number" id="num2" placeholder="Enter number 2"><br><br>
+</div>
+<div>
+<p class="select">Select an operation: </p>
+
+ <select id="operation">
+ <option value="add">Addition (+)</option>
+ <option value="subtract">Subtraction (-)</option>
+ <option value="multiply">Multiplication (*)</option>
+ <option value="divide">Division (/)</option>
+ </select>
+</div>
+
+<div>
+ <button id="button" onclick="calculate()">Calculate</button>
+
+ <p id="res">Result: <span id="result"></span></p>
+</div>
+
+
+</div>
+<script>
+ function calculate() {
+ const num1 = parseFloat(document.getElementById("num1").value);
+ const num2 = parseFloat(document.getElementById("num2").value);
+ const operation = document.getElementById("operation").value;
+
+ let result;
+ switch (operation) {
+ case "add":
+ result = num1 + num2;
+ break;
+ case "subtract":
+ result = num1 - num2;
+ break;
+ case "multiply":
+ result = num1 * num2;
+break;
+ case "divide":
+ if (num2 !== 0) {
+ result = num1 / num2;
+ } else {
+ result = "Cannot divide by zero";
+ }
+ break;
+ default:
+ result = "Invalid operation";
+ }
+
+ document.getElementById("result").textContent = result;
+ }
+ </script>
+</div>
+
+
+
+
+<footer>
+<div id="footer">
+<span style="color:black;">Thanks for visiting our website <i class="fa-solid fa-heart"></i></span>
+<a href="index.html" style="color:black;">Go to the main page <i class="fa-regular fa-face-smile"></i> </a>
+</div>
+</footer>
+
+</body>
+</html>
